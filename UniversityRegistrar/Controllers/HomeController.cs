@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace ToDoList.Controllers
+namespace UniversityRegistrar.Controllers
 {
     public class HomeController : Controller
     {
@@ -14,4 +14,3 @@ namespace ToDoList.Controllers
     }
 }
 
-//Change name of namespace to match decided project. 
