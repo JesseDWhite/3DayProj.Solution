@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-// namespace ToDoList
+namespace UniversityRegistrar
 {
   public class Program
   {
@@ -19,4 +19,3 @@ using Microsoft.AspNetCore.Hosting;
   }
 }
 
-//Change namespace to match name of project. 

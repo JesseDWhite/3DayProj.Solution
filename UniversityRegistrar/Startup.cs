@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-// using ToDoList.Models;
-// >> Change these once you know what project you're doing.
-// namespace ToDoList
+using UniversityRegistrar.Models;
+
+namespace UniversityRegistrar
 {
   public class Startup
   {
@@ -25,7 +25,7 @@ using Microsoft.Extensions.DependencyInjection;
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<ToDoListContext>(options => options
+        .AddDbContext<UniversityRegistrarContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
     }
 
@@ -43,7 +43,7 @@ using Microsoft.Extensions.DependencyInjection;
       
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Hello World!");
+        await context.Response.WriteAsync("Welcome To University");
       });
     }
   }
