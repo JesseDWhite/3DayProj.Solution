@@ -18,7 +18,6 @@ namespace UniversityRegistrar.Models
     [Required]
     public DateTime EnrollmentDate {get; set;}
     
-
     public virtual ICollection<CourseStudent> JoinEntities { get;}
   }
 }

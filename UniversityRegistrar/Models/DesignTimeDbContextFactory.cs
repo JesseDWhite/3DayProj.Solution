@@ -3,26 +3,25 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace ToDoList.Models
+namespace UniversityRegistrar.Models
 {
-  public class ToDoListContextFactory : IDesignTimeDbContextFactory<ToDoListContext>
+  public class UniversityRegistrarContextFactory : IDesignTimeDbContextFactory<UniversityRegistrarContext>
   {
 
-    ToDoListContext IDesignTimeDbContextFactory<ToDoListContext>.CreateDbContext(string[] args)
+    UniversityRegistrarContext IDesignTimeDbContextFactory<UniversityRegistrarContext>.CreateDbContext(string[] args)
     {
       IConfigurationRoot configuration = new ConfigurationBuilder()
           .SetBasePath(Directory.GetCurrentDirectory())
           .AddJsonFile("appsettings.json")
           .Build();
 
-      var builder = new DbContextOptionsBuilder<ToDoListContext>();
+      var builder = new DbContextOptionsBuilder<UniversityRegistrarContext>();
 
       builder.UseMySql(configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(configuration["ConnectionStrings:DefaultConnection"]));
 
-      return new ToDoListContext(builder.Options);
+      return new UniversityRegistrarContext(builder.Options);
     }
   }
 }
 
 
-//Obviously change out namespace, class, and Context file name to whatever is used as the project name instead of ToDoList.
