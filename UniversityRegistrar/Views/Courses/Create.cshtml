@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+@model UniversityRegistrar.Models.Course
+
+<h4>Add a new course</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new {@class = "form-control", type="text", required="required"})
+
+  @Html.LabelFor(model => model.Teacher)
+  @Html.TextBoxFor(model => model.Teacher , new {@class = "form-control", type="text", required="required"})
+
+  @Html.LabelFor(model => model.Subject)
+  @Html.TextBoxFor(model => model.Subject, new {@class = "form-control", type="text", required="required"})
+
+  @Html.LabelFor(model => model.CourseNumber)
+  @Html.TextBoxFor(model => model.CourseNumber, new {@class = "form-control", type="number", required="required"})
+
+  @Html.LabelFor(model => model.NumberOfCredits)
+  @Html.TextBoxFor(model => model.NumberOfCredits, new {@class = "form-control", type="text", required="number"})
+  <input type="submit" class="btn btn-success mt-5" value="Add new course" />
+}
+<p>@Html.ActionLink("Show all courses", "Index")</p>

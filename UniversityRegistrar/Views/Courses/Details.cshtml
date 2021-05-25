@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@using UniversityRegistrar.Models
+@model UniversityRegistrar.Models.Course
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+<hr />
+
+<h3>Course Details</h3>
+
+<h5>Teacher: @Html.DisplayFor(model => model.Teacher)</h5>
+<h5>Subject: @Html.DisplayFor(model => model.Subject) | @Html.DisplayFor(model => model.CourseNumber)</h5>
+<h5>Credit Amount: @Html.DisplayFor(model => model.NumberOfCredits)</h5>
+
+<p>@Html.ActionLink("Back to All Courses", "Index")</p>
+<p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
+<p>@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</p>
+<p>@Html.ActionLink("Add New Student", "Create", "Student")</p>
+
+<h5>Current Students Attending @Html.DisplayFor(model => model.Name)</h5>
+
+<ul>
+  @foreach (var join in Model.JoinEntities)
+  {
+    <li>@Html.ActionLink($"{@join.Student.Name}", "Details", "Students")</li>
+  }
+</ul>

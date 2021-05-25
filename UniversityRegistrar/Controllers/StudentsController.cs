@@ -93,7 +93,7 @@ namespace UniversityRegistrar.Controllers
     }
 
     [HttpPost, ActionName("Delete")]
-    public ActionResult DelteConfirmed(int id)
+    public ActionResult DeleteConfirmed(int id)
     {
       var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
       _db.Students.Remove(thisStudent);
