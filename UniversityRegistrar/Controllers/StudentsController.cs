@@ -107,7 +107,7 @@ namespace UniversityRegistrar.Controllers
       var JoinEntry = _db.CourseStudent.FirstOrDefault(entry => entry.CourseStudentId == joinId);
       _db.CourseStudent.Remove(JoinEntry);
       _db.SaveChanges();
-      return RedirectToAction("Details");
+      return RedirectToAction("Index");
     }
   }
 }
