@@ -52,7 +52,7 @@ namespace UniversityRegistrar.Controllers
     public ActionResult Edit(int id)
     {
       var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
-      ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "Name");
+      ViewBag.CourseId = new MultiSelectList(_db.Courses, "CourseId", "Name");
       return View(thisStudent);
     }
     [HttpPost]
@@ -107,7 +107,7 @@ namespace UniversityRegistrar.Controllers
       var JoinEntry = _db.CourseStudent.FirstOrDefault(entry => entry.CourseStudentId == joinId);
       _db.CourseStudent.Remove(JoinEntry);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", "Details", "Courses");
     }
   }
 }
