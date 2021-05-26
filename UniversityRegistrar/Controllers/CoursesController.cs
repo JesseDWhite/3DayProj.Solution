@@ -37,7 +37,6 @@ namespace UniversityRegistrar.Controllers
     public ActionResult Details(int id)
 
     {
-
       var thisCourse = _db.Courses
       .Include(course => course.JoinEntities)
       .ThenInclude(join => join.Student)
