@@ -24,6 +24,9 @@
   @Html.LabelFor(model => model.NumberOfCredits)
   @Html.EditorFor(model => model.NumberOfCredits)
 
+  @Html.Label("Select Student")
+  @Html.DropDownList("StudentId")
+
   <input type="submit" value="Save" />
 }
 <p>@Html.ActionLink("Back to Home", "Index")</p>

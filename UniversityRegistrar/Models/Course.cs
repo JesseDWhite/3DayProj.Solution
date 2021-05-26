@@ -16,13 +16,16 @@ namespace UniversityRegistrar.Models
     [Required]
     public string Name { get; set; }
     [Required]
-    public string Teacher {get; set;}
+    public string Teacher { get; set; }
     [Required]
-    public string Subject {get; set;}
+    public string Subject { get; set; }
     [Required]
-    public int CourseNumber {get; set;}
+    public int CourseNumber { get; set; }
     [Required]
-    public float NumberOfCredits{get; set;}
+    public float NumberOfCredits { get; set; }
     public virtual ICollection<CourseStudent> JoinEntities { get; set; }
+    // - (1) -- courseId (1) -- student(1)
+    // - (2) -- courseId (2) -- student(1)
+
   }
 }

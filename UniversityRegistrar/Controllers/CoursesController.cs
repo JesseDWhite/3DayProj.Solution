@@ -1,8 +1,9 @@
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using UniversityRegistrar.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace UniversityRegistrar.Controllers
 {
@@ -45,6 +46,7 @@ namespace UniversityRegistrar.Controllers
     }
     public ActionResult Edit(int id)
     {
+      ViewBag.StudentId = new SelectList(_db.Students, "StudentId", "Name");
       var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
       return View(thisCourse);
     }
@@ -52,7 +54,6 @@ namespace UniversityRegistrar.Controllers
 
     public ActionResult Edit(Course course)
     {
-
       _db.Entry(course).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
