@@ -4,9 +4,15 @@
 
 @model UniversityRegistrar.Models.Student
 
-<h2>Are you sure you want to delete this?</h2>
+<h2>Are you sure you want to delete this student?</h2>
 
 @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+
+<!-- crate link to delte student -->
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete student" />
+}
 
 @if (@Model.JoinEntities.Count == 0)
 {
@@ -22,7 +28,7 @@ else
       @using (Html.BeginForm("DeleteCourse", "Students"))
       {
         @Html.Hidden("joinId", @join.CourseStudentId)
-        <input type="submit" value="Delete" />
+        <input type="submit" value="Remove student from course" />
       }
     }
   </ul>
