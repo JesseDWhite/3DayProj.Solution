@@ -12,6 +12,10 @@
 {
   @Html.HiddenFor(model => model.CourseId)
 
+  @Html.LabelFor(model => model.Name)
+  <!-- if we wanted to customize labe it would just be @Html.Label("our lable") -->
+  @Html.EditorFor(model => model.Name)
+
   @Html.LabelFor(model => model.Teacher)
   @Html.EditorFor(model => model.Teacher)
 
